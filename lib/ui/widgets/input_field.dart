@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_todo_app/ui/theme.dart';
 
 class MyInputField extends StatelessWidget {
@@ -32,10 +31,29 @@ class MyInputField extends StatelessWidget {
               children: [
                 Expanded(
                   child: TextFormField(
+                    readOnly: widget==null?false:true,
                     autofocus: false,
                     controller: controller,
+                    style: subTitleStyle,
+                    decoration: InputDecoration(
+                      hintText: hint,
+                      hintStyle: subTitleStyle,
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                          width: 0,
+                        ),
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white,
+                          width: 0,
+                        ),
+                      ),
+                    ),
                   )
-                )
+                ),
+                widget==null?Container():Container(child: widget)
               ],
             ),
 

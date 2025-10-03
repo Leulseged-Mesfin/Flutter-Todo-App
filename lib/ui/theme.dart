@@ -45,3 +45,11 @@ TextStyle get titleStyle {
     // color: Colors.black
   );
 }
+TextStyle get subTitleStyle {
+  return GoogleFonts.lato(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
+    // color: Get.isDarkMode ? Colors.black : Colors.white,
+    color: Colors.black
+  );
+}
